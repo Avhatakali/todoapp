@@ -1,0 +1,18 @@
+
+<%= form_with(model:[@list, @task], local: true) do |form| %>
+
+    <p>
+      <%= form.label :Task %>  <br>
+      <%= form.text_field :task %>
+    </p>
+
+     <p>
+       <%= form.label :Done %>  <br>
+       <%= form.check_box :done %>
+     </p>
+
+      <p>
+          <%= form.submit %>
+      </p>
+
+<% end %>

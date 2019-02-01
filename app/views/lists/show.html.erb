@@ -1,0 +1,24 @@
+<h4> Created todo task </h4>
+<p>
+  Todo : <%= @list.name %> <br>
+  Description : <%= @list.description%>
+</p>
+
+<%= link_to 'index', lists_path %>
+
+<table>
+    <tr>
+        <th>Task</th>
+        <th>Done</th>
+    </tr>
+
+    <% @list.tasks.each do |task| %>
+               <tr>
+                   <td><%= task.task %></td>
+                   <td><%= task.done %></td>
+                   <td><%= link_to 'Show', list_task_path(@list, task)%></td>
+                   <td><%= link_to 'Edit', edit_list_task_path(@list, task)%></td>
+                   <td><%= link_to 'Delete', list_task_path(@list, task), method: :delete %></td>
+               </tr>
+    <% end %>
+</table>

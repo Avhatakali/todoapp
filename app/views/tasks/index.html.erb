@@ -1,0 +1,15 @@
+
+<h4>Here are all your tasks:</h4>
+<p>done</p>
+<ul>
+  <% @list.tasks.done().each do |task| %>
+    <li><%= task.task %></li>
+  <% end %>
+</ul>
+
+<p>not done</p>
+<ul>
+  <% @list.tasks.not_done().each do |task| %>
+    <li><%= task.task %></li>
+  <% end %>
+</ul>
